@@ -162,16 +162,16 @@
 // console.log(`Ви ввели число ${inputValue} `);
 
 //8. В переменной min лежит число от 0 до 59. Определите в какую четверть часа попадает это число (в первую, вторую, третью или четвертую).
-let min = prompt('Введіть число від 0 до 59');
-if (min >= 0 && min <= 14) {
-  console.log(`${min} Знаходиться в першій четверті`);
-} else if (min >= 15 && min <= 29) {
-  console.log(`${min} Знаходиться в 2 четверті`);
-} else if (min >= 30 && min <= 44) {
-  console.log(`${min} Знаходиться в 3 четверті`);
-} else if (min >= 45 && min <= 59) {
-  console.log(`${min} Знаходиться в 4 четверті`);
-}
+// let min = prompt('Введіть число від 0 до 59');
+// if (min >= 0 && min <= 14) {
+//   console.log(`${min} Знаходиться в першій четверті`);
+// } else if (min >= 15 && min <= 29) {
+//   console.log(`${min} Знаходиться в 2 четверті`);
+// } else if (min >= 30 && min <= 44) {
+//   console.log(`${min} Знаходиться в 3 четверті`);
+// } else if (min >= 45 && min <= 59) {
+//   console.log(`${min} Знаходиться в 4 четверті`);
+// }
 // switch (min) {
 //   case min >= 0 && min <= 14:
 //     console.log(`${min} Знаходиться в першій четверті`);
@@ -188,3 +188,13 @@ if (min >= 0 && min <= 14) {
 //   default:
 //     console.log('Ви ввели число більше вказаного!');
 // }
+
+// Дана строка, состоящая из символов, например, 'abcde'.
+//     Проверьте, что первым символом этой строки является буква 'a'.
+// Если это так - выведите 'да', в противном случае выведите 'нет'.
+const string1 = 'abcde';
+const string2 = 'bcde';
+console.log(string1.startsWith('a'))
+console.log(string2.startsWith('a'))
+console.log(string1.endsWith('e'))
+console.log(string2.endsWith('e'))
