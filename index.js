@@ -141,22 +141,50 @@
 //введёт число больше 100, либо не нажмет кнопку
 //Отмена в prompt
 
-let inputValue = prompt('Введіть число більше 100');
-let check = false;
-// while (inputValue <= 100){
-//   inputValue = prompt('Введіть число більше 100');
+// let inputValue = prompt('Введіть число більше 100');
+// let check = false;
+// // while (inputValue <= 100){
+// //   inputValue = prompt('Введіть число більше 100');
   
-// } 
-do {
-  if (inputValue === null) {
-    check = false;
-  } else if (inputValue <=100) {
-    check = true;
-    inputValue = prompt('Введіть число більше 100');
-  } else{
-    check = false;
-  }
+// // } 
+// do {
+//   if (inputValue === null) {
+//     check = false;
+//   } else if (inputValue <=100) {
+//     check = true;
+//     inputValue = prompt('Введіть число більше 100');
+//   } else{
+//     check = false;
+//   }
 
-} while (check);
+// } while (check);
 
-console.log(`Ви ввели число ${inputValue} `);
+// console.log(`Ви ввели число ${inputValue} `);
+
+//8. В переменной min лежит число от 0 до 59. Определите в какую четверть часа попадает это число (в первую, вторую, третью или четвертую).
+let min = prompt('Введіть число від 0 до 59');
+if (min >= 0 && min <= 14) {
+  console.log(`${min} Знаходиться в першій четверті`);
+} else if (min >= 15 && min <= 29) {
+  console.log(`${min} Знаходиться в 2 четверті`);
+} else if (min >= 30 && min <= 44) {
+  console.log(`${min} Знаходиться в 3 четверті`);
+} else if (min >= 45 && min <= 59) {
+  console.log(`${min} Знаходиться в 4 четверті`);
+}
+// switch (min) {
+//   case min >= 0 && min <= 14:
+//     console.log(`${min} Знаходиться в першій четверті`);
+//     break;
+//   case min >= 15 && min <= 29:
+//     console.log(`${min} Знаходиться в 2 четверті`);
+//     break;
+//   case min >= 30 && min <= 44:
+//     console.log(`${min} Знаходиться в 3 четверті`);
+//     break;
+//   case min >= 45 && min <= 59:
+//     console.log(`${min} Знаходиться в 4 четверті`);
+//     break;
+//   default:
+//     console.log('Ви ввели число більше вказаного!');
+// }
