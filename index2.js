@@ -33,18 +33,34 @@
 //<номер элемента> - <значение элемента>
 //Нумерация элементов должна начинаться с 1.
 // const styles = ["Джаз", "Блюз", "Рок-н-ролл", "Регги", "Рэп"];
-const styles = [
-  { name: "Джаз", engl: "jazz", number: 1 },
-  { name: "Блюз", engl: "blues", number: 2 },
-  { name: "Рок-н-ролл", engl: "rock 'n' roll ", number: 3 },
-  { name: "Регги", engl: "reggae", number: 4 },
-  { name: "Рэп", engl: "rap", number: 5 },
-];
+// const styles = [
+//   { name: "Джаз", engl: "jazz", number: 1 },
+//   { name: "Блюз", engl: "blues", number: 2 },
+//   { name: "Рок-н-ролл", engl: "rock 'n' roll ", number: 3 },
+//   { name: "Регги", engl: "reggae", number: 4 },
+//   { name: "Рэп", engl: "rap", number: 5 },
+// ];
 
-function logItems(array) {
-  for (let i = 0; i < array.length; i++) {
-    const element = array[i];
-    console.log(`${element.number} - ${element.name}`);
+// function logItems(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     const element = array[i];
+//     console.log(`${element.number} - ${element.name}`);
+//   }
+// }
+// logItems(styles);
+//Напиши функцию findSmallerNumber(numbers)
+//которая ищет самое маленькое число в массиве
+//Добавь проверку что функция получает массив
+const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3, -7];
+function findSmallerNumber(numbers) {
+  // return Math.min(...numbers)
+  let smallerNumber = numbers[0];
+  for (const number of numbers) {
+    if (smallerNumber > number) {
+      smallerNumber = number;
+          }
+
   }
+  return smallerNumber;
 }
-logItems(styles);
+console.log(findSmallerNumber(numbers));
