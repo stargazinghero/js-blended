@@ -80,75 +80,177 @@
  * { name: '🍓', price: 110 }
  */
 
-const card = {
-  items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
-    
+// const card = {
+//   items: [],
+//   getItems() {
+//     return this.items;
+//   },
+//   add(product) {
 
-    for (const item of this.items) {
-      if (item.name === product.name) {
-        item.quantity += 1;
-        return
-      }
+//     for (const item of this.items) {
+//       if (item.name === product.name) {
+//         item.quantity += 1;
+//         return
+//       }
+//     }
+//     const newProduct = { ...product, quantity: 1 };
+//     this.items.push(newProduct)
+//   },
+
+//   remove(productName) {
+// for (let i = 0; i < this.items.length; i++) {
+//   const element = this.items[i];
+
+//   if (element.name === productName) {
+
+//     this.items.splice(i, 1);
+//   }
+// }
+//   },
+
+//   clear() {
+//     this.items = [];
+//   },
+//   countTotalPrice() {
+//     let total = 0;
+//     for (const {price, quantity} of this.items) {
+//       total += price * quantity;
+//     }
+//     return total;
+//   },
+
+//   increaseQuantity(productName) {
+//     for (let item of this.items) {
+
+//       if (productName === item.name) {
+//         item.quantity += 1;
+//       }
+//     }
+//   },
+
+//   decreaseQuantity(productName) {
+//     for (let item of this.items) {
+
+//       if (productName === item.name) {
+//         item.quantity -= 1;
+//       }
+//     }
+//   }
+
+// }
+
+// card.add({ name: '🍎', price: 50 });
+// card.add({ name: '🍇', price: 70 });
+// card.add({ name: '🍇', price: 70 });
+// card.add({ name: '🍋', price: 60 });
+// card.add({ name: '🍓', price: 110 });
+// card.add({ name: '🍓', price: 110 });
+
+// card.remove('🍓');
+// card.increaseQuantity('🍋');
+// card.decreaseQuantity('🍇');
+// console.log(card.countTotalPrice());
+// console.table(card.getItems());
+
+// Программа должна уметь переводить 5 валют друг в друга (валюты на ваше усмотрение). Пользователь вводит сначала название валюты, затем вводит сумму, и название валюты в которую хочет перевести, после чего получает ответ (для общения с пользователем используем prompt и alert подробнее тут).
+// Если пользователь ввел что-то неверно, нужно повторить ввод этой информации.
+// По окончании конвертации спросить у пользователя хочет ли он произвести конвертацию еще раз. Если да - то повторить все о'и. Если нет - выполнить выход из программы.
+
+const currency = {
+  usd: {
+    rub: 71.85,
+    chf: 0.91,
+    eur: 0.86,
+    pln: 3.98,
+  },
+  rub: {
+    usd: 0.014,
+    chf: 0.013,
+    eur: 0.012,
+    pln: 0.056,
+  },
+  chf: {
+    usd: 1.09,
+    rub: 78.28,
+    eur: 0.94,
+    pln: 4.35,
+  },
+  eur: {
+    usd: 1.16,
+    rub: 82.99,
+    chf: 1.06,
+    pln: 4.61,
+  },
+  pln: {
+    usd: 0.25,
+    rub: 18,
+    chf: 0.23,
+    eur: 0.22,
+  },
+};
+
+alert("На нашем сайте вы можете конвертировать валюты USD, RUB, CHF, EUR, PLN");
+
+// const currencyToConvert = prompt("Яку валюти ви бажаєте обміняти?");
+
+// const currencyWhichConvert = prompt("В яку валюту ви бажаєте обміняти?");
+
+// const currencyСount = prompt("Кількість валюти?");
+let toConvertInfo = {};
+let price = 0;
+function toConvertCurrency() {
+  let currencyToConvert = prompt("Яку валюти ви бажаєте обміняти?");
+  const currencyToConvertModify = currencyToConvert.toLocaleLowerCase();
+  if (currency[currencyToConvertModify]) {
+    toConvertInfo = currency[currencyToConvertModify];
+    whichConvertCurrency(currencyToConvertModify);
+  } else {
+    alert("Ви ввели невірні дані!!!");
+    const tryAgain = confirm("Ви хочете спробувати знову?");
+    if (tryAgain) {
+      toConvertCurrency();
     }
-    const newProduct = { ...product, quantity: 1 };
-    this.items.push(newProduct)
-  },
-
-  remove(productName) {
-for (let i = 0; i < this.items.length; i++) {
-  const element = this.items[i];
-  
-  if (element.name === productName) {
-    
-    this.items.splice(i, 1);
   }
 }
-  },
 
-  clear() {
-    this.items = [];
-  },
-  countTotalPrice() {
-    let total = 0;
-    for (const {price, quantity} of this.items) {
-      total += price * quantity;
-    }
-    return total;
-  },
-
-  increaseQuantity(productName) {
-    for (let item of this.items) {
-      
-      if (productName === item.name) {
-        item.quantity += 1;
-      }
-    }
-  },
-
-  decreaseQuantity(productName) {
-    for (let item of this.items) {
-      
-      if (productName === item.name) {
-        item.quantity -= 1;
-      }
+function whichConvertCurrency(toConvert) {
+  let currencyWhichConvert = prompt(
+    `На яку валюту ви хочете обміняти ${toConvert}`
+  );
+  const currencyWhichConvertModify = currencyWhichConvert.toLocaleLowerCase();
+  if (toConvertInfo[currencyWhichConvertModify]) {
+    price = toConvertInfo[currencyWhichConvertModify];
+    convertsation(toConvert, currencyWhichConvertModify, price);
+  } else {
+    alert("Ви ввели невірні дані!!!");
+    const tryAgain = confirm("Ви хочете спробувати знову?");
+    if (tryAgain) {
+      toConvertCurrency();
     }
   }
-
 }
 
-card.add({ name: '🍎', price: 50 });
-card.add({ name: '🍇', price: 70 });
-card.add({ name: '🍇', price: 70 });
-card.add({ name: '🍋', price: 60 });
-card.add({ name: '🍓', price: 110 });
-card.add({ name: '🍓', price: 110 });
+function convertsation(toConvert, currencyWhichConvertModify, price) {
+  let currencyСount = prompt("Кількість валюти?");
+  let currencyСountToNumber = Number(currencyСount);
+  if (!currencyСountToNumber) {
+    alert("Ви ввели невірні дані!!!");
+    const tryAgain = confirm("Ви хочете спробувати знову?");
+    if (tryAgain) {
+      toConvertCurrency();
+    }
+  }
+  console.log("currencyСountToNumber", currencyСountToNumber);
+  console.log("price", price);
+  alert(
+    `${currencyСountToNumber} ${currencyWhichConvertModify} буде дорівнювати ${
+      currencyСountToNumber * price
+    } ${toConvert} по курсу ${price}`
+  );
+  const repeat = confirm("Ви хочете повторити операцію?");
+  if (repeat) {
+    toConvertCurrency();
+  }
+}
 
-card.remove('🍓');
-card.increaseQuantity('🍋');
-card.decreaseQuantity('🍇');
-console.log(card.countTotalPrice());
-console.table(card.getItems());
+toConvertCurrency();
