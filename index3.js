@@ -87,3 +87,36 @@
 //     return array.map(callback)
 // };
 // console.log(each(array,(value) => value * 2));
+
+//Напишите функцию makeCounter, которая возвращает другую
+//функцию, которая считает и логирует количество своих вызовов
+
+// const makeCounter = () => {
+//     let total = 0;
+//     return () => (total +=1) 
+// }
+
+// const total = makeCounter()
+// console.log(total());
+// console.log(total())
+// console.log(total())
+// console.log(total())
+
+//Узнать общие годы практики в объекте workers
+
+// const workers = [
+//   { id: 10, name: 'Mango', years: 14 },
+//   { id: 2, name: 'Poly', years: 19 },
+//   { id: 41, name: 'Ajax', years: 30 },
+//   { id: 99, name: 'Kiwi', years: 22 },
+// ];
+
+// const sumyears = workers.reduce((acc, work) => work.years + acc, 0)
+// console.log(sumyears);
+
+//Дан массив с числами. Оставьте в нем только положительные числа.
+//Затем извлеките квадратный корень и этих чисел.
+// const array = [121, -2, 225, 0, 4, -5, 36, -11];
+
+// const filteredArray = array.filter(num => num > 0).map(num => Math.sqrt(num));
+// console.log(filteredArray);
