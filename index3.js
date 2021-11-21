@@ -10,15 +10,50 @@
 // makeDish("Mango", "apple pie");
 // makeDish("Poly", "muffins");
 
-const makeSheff = function (name) {
-    return function makeDish(dish) {
-        console.log(`${name} is cooking ${dish}`);
-    };
-};
+// const makeSheff = function (name) {
+//     return function makeDish(dish) {
+//         console.log(`${name} is cooking ${dish}`);
+//     };
+// };
 
-const mango = makeSheff("mango");
-console.dir(mango);
-mango('coffe');
+// const mango = makeSheff("mango");
+// console.dir(mango);
+// mango('coffe');
 
-const bill = makeSheff("bill");
-bill('pancake');
+// const bill = makeSheff("bill");
+// bill('pancake');
+
+
+// Исправьте ошибки, чтобы код работал
+// const product = {
+//   price: 5000,
+//   showPrice() {
+//     console.log(this.price);
+//   },
+// };
+// product.showPrice();
+
+// const product = {
+//   price: 5000,
+//   showPrice() {
+//     console.log(this.price);
+//   },
+// };
+
+// function callAction(action) {
+//   action();
+// }
+
+// callAction(product.showPrice.bind(product))
+
+//Напишите функцию savePassword(password) которая принимает
+//пароль и возвращает внутреннюю функцию, которая принимает
+//строку и возвращает буль true, если строка совпадает с сохраненным
+//паролем и false - если не совпадает
+
+const savePassword = (password) => {
+    return (ourPassword) => password === ourPassword;
+}
+
+const mangoPassword = savePassword('mango');
+console.log(mangoPassword('mango'));
