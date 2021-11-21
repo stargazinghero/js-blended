@@ -75,3 +75,15 @@
 
 // const discoun = saveDiscount(70)
 // console.log(discoun(1000));
+
+//Напишите функцию each(array, callback), которая
+//первым параметром принимает массив, а вторым - функцию,
+//которая применится к каждому элементу массива.
+//Функция each должна вернуть новый массив, элементами
+//которого будут результаты вызова callback
+//callback функци должна умножать элементы на 2
+// const array = [3, 5, 6, 34, 8, 83, 12, 34];
+// const each = (array, callback) => {
+//     return array.map(callback)
+// };
+// console.log(each(array,(value) => value * 2));
