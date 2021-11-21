@@ -23,7 +23,6 @@
 // const bill = makeSheff("bill");
 // bill('pancake');
 
-
 // Исправьте ошибки, чтобы код работал
 // const product = {
 //   price: 5000,
@@ -93,7 +92,7 @@
 
 // const makeCounter = () => {
 //     let total = 0;
-//     return () => (total +=1) 
+//     return () => (total +=1)
 // }
 
 // const total = makeCounter()
@@ -120,3 +119,35 @@
 
 // const filteredArray = array.filter(num => num > 0).map(num => Math.sqrt(num));
 // console.log(filteredArray);
+
+//Нужно проверить "same" массивы
+//числа с первого в квадрате равны числам второго
+const a = [121, 144, 19, 161, 19, 144, 19, 11];
+const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+
+// const checkArray = function (arr1, arr2) {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   }
+//   const sqrtArray2 = arr2.map((number) => Math.sqrt(number));
+//   const sortedArray1 = [...arr1].sort((a, b) => a - b);
+//   const sortedArray2 = [...sqrtArray2].sort((a, b) => a - b);
+//   for (let i = 0; i < sortedArray1.length; i += 1) {
+//     if (sortedArray1[i] !== sortedArray2[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+
+// console.log(checkArray(a, b));
+
+const checkArray = function (arr1, arr2) {
+  const sortedArray1 = [...arr1].sort((a, b) => a - b);
+  const sortedArray2 = [...arr2].sort((a, b) => a - b);
+  return sortedArray1
+    .map((number) => number * number)
+    .every((number, index) => number === sortedArray2[index]);
+};
+
+console.log(checkArray(a, b));
