@@ -51,9 +51,27 @@
 //строку и возвращает буль true, если строка совпадает с сохраненным
 //паролем и false - если не совпадает
 
-const savePassword = (password) => {
-    return (ourPassword) => password === ourPassword;
-}
+// const savePassword = (password) => {
+//     return (ourPassword) => password === ourPassword;
+// }
 
-const mangoPassword = savePassword('mango');
-console.log(mangoPassword('mango'));
+// const mangoPassword = savePassword('mango');
+// console.log(mangoPassword('mango'));
+
+//Напишите функцию для хранения скидки.Функция возвращает
+//другую функцию, которая принимает сумму покупки
+//и возвращает финальную сумму с сохраненной скидкой.
+
+// const saveDiscount = (discoun) => {
+//     return function makeDiscount(sum) {
+//         return sum - sum * (discoun / 100)
+//     }
+// }
+
+// const discoun = saveDiscount(70)
+// console.log(discoun(1000));
+
+// const saveDiscount = (discoun) => (sum) => sum - sum * (discoun / 100)
+
+// const discoun = saveDiscount(70)
+// console.log(discoun(1000));
