@@ -254,3 +254,4 @@ function convertsation(toConvert, currencyWhichConvertModify, price) {
 }
 
 toConvertCurrency();
+
